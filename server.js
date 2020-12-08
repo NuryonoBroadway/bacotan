@@ -9,11 +9,14 @@ const mongoose = require("mongoose");
 const Article = require("./models/articles");
 const methodOverride = require("method-override");
 
-mongoose.connect(process.env.DATABASE_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-});
+mongoose.connect(
+  "mongodb+srv://user:Zxbaklo2ln8H2htj@cluster0.bwleo.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  }
+);
 
 const db = mongoose.connection;
 db.on("error", (err) => console.error(err));
